@@ -1,0 +1,1 @@
+(this.webpackJsonploan=this.webpackJsonploan||[]).push([[25],{279:function(e,n,t){"use strict";t.r(n),n.default={text:{debitCardScene_title:"No. Rekening",debitCardScene_add:"Tambahkan No. Rekening",debitCardScene_btn:"Kirim"}}}}]);
