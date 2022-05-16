@@ -1,4 +1,4 @@
-import { axios, createActionMap } from 'loan-utils';
+import { axios, createActionMap, history } from 'loan-utils';
 import { Toast } from 'antd-mobile';
 
 
@@ -11,7 +11,7 @@ const login = (params, text) => () => {
     localStorage.setItem('userInfo', JSON.stringify(res))
     localStorage.setItem('token', res.token)
     Toast.success(text.loginScene_login_success, 1, () => {
-      window.location.replace('credit-items-scene')
+      history.replace('credit-items-scene')
     })
   }, error => {
     Toast.fail(error?.response?.data?.error_message)
