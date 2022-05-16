@@ -1,7 +1,11 @@
-import { createBrowserHistory, createMemoryHistory } from 'history';
+import {
+  // createBrowserHistory,
+  createMemoryHistory,
+  createHashHistory
+} from 'history';
 // use this way to fix bug(Invariant Violation: Browser history needs a DOM)
 export const history = (typeof window !== 'undefined'
-  ? createBrowserHistory()
+  ? createHashHistory()
   : createMemoryHistory());
 
-// export const hashHistory = createHashHistory({})
+export const hashHistory = createHashHistory()

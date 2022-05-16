@@ -29,19 +29,20 @@ class OrderScene extends Component {
   static contextType = ConfigContext;
   state = {
     activity: 0,
-    user_orders: [...this.props.user_orders].filter(item => {
+    user_orders: [...this.props.user_orders]?.filter(item => {
       return item.order_status !== 200
-    }),
-    tab1_num: [...this.props.user_orders].filter(item => {
+    }) || [],
+    tab1_num: [...this.props.user_orders]?.filter(item => {
       return item.order_status !== 200
-    }),
-    tab2_num: [...this.props.user_orders].filter(item => {
+    }) || [],
+    tab2_num: [...this.props.user_orders]?.filter(item => {
       return item.order_status === 200
-    }),
+    }) || [],
   }
 
   render() {
     const { text } = this.context;
+    console.log(this.props.user_orders, 'datadata')
     return (
       <NavWrap title={text.orderScene_title} isBack={false}>
         <Tab>

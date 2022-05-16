@@ -180,25 +180,25 @@ class BaseInfoScene extends Component {
       if (!error) { // 没有错误的话我们就可以根据form数据进行提交了
         this.props.user_basic({
           info: {
-            user_type: value.user_type[0],
-            loan_remark: value.loan_remark[0],
-            education: value.education[0],
-            marital_status: value.marital_status[0],
-            children_number: value.children_number[0],
-            religion: value.religion[0],
+            user_type: value.user_type?.[0],
+            loan_remark: value.loan_remark?.[0],
+            education: value.education?.[0],
+            marital_status: value.marital_status?.[0],
+            children_number: value.children_number?.[0],
+            religion: value.religion?.[0],
             income: value.income,
-            province: value.province.join('.'),
+            province: value.province?.join('.'),
             address: value.address,
-            residence_duration: value.residence_duration[0],
+            residence_duration: value.residence_duration?.[0],
             email: value.email,
             whatsApp: value.whatsApp,
-            profession: value.profession[0],
+            profession: value.profession?.[0],
             company_name: value.company_name,
-            company_province: value.company_province.join('.'),
+            company_province: value.company_province?.join('.'),
             company_address: value.company_address,
             company_phone: value.company_phone,
-            salary: value.salary[0],
-            workTime: value.workTime[0]
+            salary: value.salary?.[0],
+            workTime: value.workTime?.[0]
           },
           loancontacts_set: [{
             'mobile': value.mobile1.replace(/\s/g, ''),

@@ -10,6 +10,7 @@ export const prepareSceneData = () => ({ dispatch }) => {
       .then(([data]) => {
         Toast.hide()
         if(!data.code) {
+          console.log(data,'datadata')
           dispatch(
             externalDataActionCreator('user_orders', data)
           )

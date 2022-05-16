@@ -64,12 +64,6 @@ Mock.mock('/loan/app/params', 'get', () => {
         value: '',
         title: '手机'
       },{
-        index: 0,
-        type: 0,
-        key: 'email',
-        value: '',
-        title: '邮箱'
-      },{
         index: 1,
         type: 1,
         key: 'select1',
@@ -89,8 +83,16 @@ Mock.mock('/loan/app/params', 'get', () => {
         value: '',
         title: '日期',
       }],
-      relation_list: [],
-      loancontacts_set: [],
+      relation_list: [6, 7],
+      loancontacts_set: [{
+        name: 'adasd',
+        mobile: '1392349282349',
+        relation: '2 + 4',
+      }, {
+        name: 'adasd1',
+        mobile: '1392349282349',
+        relation: '2 + 5',
+      }],
     },
   })
 })
@@ -197,22 +199,14 @@ Mock.mock('/loan/app/apply_loans', 'post', () => {
 })
 
 Mock.mock('/loan/app/user_basic', 'post', () => {
-  const d = Mock.mock({
-    'data|1-10': [{
-      'id': '@id',
-      'name': '@name',
-      'sales_volume|1-100': 100,
-      'loan_amount': [50, 100],
-      'download_uri': 'https://www.baidu.com/',
-      'loan_rate_display|1-100': 100,
-    }],
-  })
-  return d.data
+  return {
+    info: '1'
+  }
 })
 
 Mock.mock('/loan/app/user_orders', 'get', () => {
   const d = Mock.mock({
-    'data': {
+    'data|1-10': [{
       'user_orders': /100|200/,
       'id': '@name',
       'order_status|1-100': /200|90|100|170|175|180|169|110/,
@@ -234,7 +228,7 @@ Mock.mock('/loan/app/user_orders', 'get', () => {
       },
       'api_contract': 1,
       'product_id': '@id',
-    },
+    },]
   })
   return d.data
 })

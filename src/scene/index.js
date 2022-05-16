@@ -10,7 +10,7 @@ const Wrap = styled.div`
 const indexScene = (Components, componentsConfig) => {
   return class Index extends Component {
     render() {
-      if(!window.location.pathname.includes('credit-items-scene') && !window.location.pathname.includes('login-scene') && !getToken()) {
+      if(!window.location.hash.includes('credit-items-scene') && !window.location.hash.includes('login-scene') && !getToken()) {
         history.replace('login-scene')
       }
       return (
