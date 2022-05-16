@@ -1,0 +1,1 @@
+(this.webpackJsonploan=this.webpackJsonploan||[]).push([[26],{280:function(n,e,a){"use strict";a.r(e),e.default={text:{confirmOrderScene_title:"",confirmOrderScene_load_p1:"Sedang Membantu Anda Mencocokan Produk Pinjaman",confirmOrderScene_load_p2:"Mohon Tidak Keluar Dair App"}}}}]);
